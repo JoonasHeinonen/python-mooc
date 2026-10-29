@@ -80,3 +80,70 @@ while msg != "":
         lines += 1
     print(underlines)
     msg = str(input("Please type in a string:"))
+
+# Right-aligned
+chars = ""
+word = str(input("Please type in a string:"))
+
+word_len = len(word)
+
+while word_len < 20:
+    chars += "*"
+    word_len += 1
+
+chars += word
+print(chars)
+
+# A framed word
+width = 30
+
+fence = ""
+fence_index = 0
+
+actual_word = ""
+actual_word_index = 0
+
+word = str(input("Word"))
+
+while fence_index < width:
+    fence += "*"
+    fence_index += 1
+
+spaces = (width - len(word) - 2) // 2
+
+line = "*" + " " * spaces + word
+line += " " * (width - len(line) - 1) + "*"
+
+print(fence)
+print(line)
+
+# Substrings, part 1
+word = str(input("Please type in a string:"))
+
+for i in range(len(word)):
+    print(word[:i+1])
+
+# Substrings, part 2
+word = str(input("Please type in a string:"))
+
+for i in range(len(word) - 1, -1, -1):
+    print(word[i:])
+
+# Does it contain vowels
+def check_character(character, wrd):
+    """ 
+    A custom function to find the specific characters from a word.
+    """
+    if character in wrd:
+        print(f"{character} found")
+    else:
+        print(f"{character} not found")
+
+word = str(input("Please type in a string:"))
+
+word = word.lower()
+
+check_character("a", word)
+check_character("e", word)
+check_character("o", word)
+
