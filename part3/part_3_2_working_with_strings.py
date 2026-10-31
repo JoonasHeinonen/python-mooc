@@ -147,3 +147,36 @@ check_character("a", word)
 check_character("e", word)
 check_character("o", word)
 
+# Find the first substring.
+word = input("Please type in a word:")
+char = input("Please type in a character:")
+
+cleaned_sub_word = ""
+
+index = word.find(char)
+
+if index != -1:
+    if index + 3 <= len(word):
+        cleaned_sub_word = word[index:index+3]
+        print(cleaned_sub_word)
+
+# Find all the substrings
+word = input("Please type in a word:")
+char = input("Please type in a character:")
+
+for i in range(len(word)):
+    if word[i] == char:
+        if i + 3 <= len(word):
+            print(word[i:i+3])
+
+# The second occurrence
+string = input("Please type in a string:")
+substring = input("Please type in a substring:")
+
+first = string.find(substring)
+second = string.find(substring, first + len(substring))
+
+if second == -1:
+    print("The substring does not occur twice in the string.")
+else:
+    print(f"The second occurrence of the substring is at index {second}.")
